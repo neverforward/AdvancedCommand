@@ -4,8 +4,8 @@
     "product_type": "addon"
   },
   "header": {
-    "name": "SAPI",
-    "description": "SAPI",
+    "name": "高级命令",
+    "description": "高级命令",
     "min_engine_version": [
       1,
       21,
