@@ -1,0 +1,57 @@
+{
+  "format_version": 2,
+    "metadata": {
+    "product_type": "addon"
+  },
+  "header": {
+    "name": "SAPI",
+    "description": "SAPI",
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ],
+    "uuid": "58a2cb4b-df6c-4366-a396-fd9dabaef503",
+    "version": [
+      1,
+      0,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "58fe16a3-1095-473e-84ae-a444e5950974",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "45b3178a-3b14-4308-a058-45cf738fa2d4",
+      "entry": "scripts/main.js",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/common",
+      "version": "1.0.0"
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.0.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0-beta"
+    }
+  ]
+}

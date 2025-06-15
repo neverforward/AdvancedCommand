@@ -1,0 +1,15 @@
+{
+    "version": "0.3.0",
+    "configurations": [
+        {
+            "type": "minecraft-js",
+            "request": "attach",
+            "name": "Debug with Minecraft",
+            "mode": "listen",
+            "preLaunchTask": "build",
+            "targetModuleUuid": "58a2cb4b-df6c-4366-a396-fd9dabaef503",
+            "generatedSourceRoot": "${workspaceFolder}/scripts/",
+            "port": 19144
+        }
+    ]
+}
