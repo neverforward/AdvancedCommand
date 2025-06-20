@@ -75,16 +75,16 @@ export function pifunc(o: cmdorigin, ps: mc.Player[]) {
         break
     }
     switch (p.getGameMode()) {
-      case mc.GameMode.adventure:
+      case mc.GameMode.Adventure:
         gm = '冒险';
         break;
-      case mc.GameMode.creative:
+      case mc.GameMode.Creative:
         gm = '创造';
         break;
-      case mc.GameMode.spectator:
+      case mc.GameMode.Spectator:
         gm = '旁观者';
         break;
-      case mc.GameMode.survival:
+      case mc.GameMode.Survival:
         gm = '生存';
         break;
     }

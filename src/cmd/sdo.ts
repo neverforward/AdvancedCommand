@@ -30,7 +30,7 @@ export function sdofunc(o: cmdorigin, cmd: string) {
       }
       catch (err) {
         if (err instanceof Error) console.log(`\n§l§c[sdo] 命令执行失败: ${err.message}§r\n--------------\n生物：${e.nameTag == "" ? e.typeId : e.nameTag}\n命令：${cmd}\n位置：§cx: ${e.location.x} §ay: ${e.location.y} §9z: ${e.location.z}\n§r--------------`)
-        return
+        return;
       }
     }
     else if (o.sourceType == srctype.Block) {

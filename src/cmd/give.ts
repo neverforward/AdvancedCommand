@@ -54,7 +54,7 @@ export function givefunc(o: cmdorigin, p: mc.Player[], item: string, a?: number,
     catch (e) {
       return {
         status: statutype.Failure,
-        message: '操作失败' + e.message
+        message: '操作失败:' + e.message
       }
     }
 
