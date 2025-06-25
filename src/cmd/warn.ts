@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let warn: cmdtype = {
   name: "ac:warn",
   description: "在控制台中打印警告",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.warn ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: "message",

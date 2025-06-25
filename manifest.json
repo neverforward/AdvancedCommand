@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-    "metadata": {
+  "metadata": {
     "product_type": "addon"
   },
   "header": {
@@ -43,7 +43,7 @@
   "dependencies": [
     {
       "module_name": "@minecraft/common",
-      "version": "1.0.0"
+      "version": "1.2.0"
     },
     {
       "module_name": "@minecraft/server",
@@ -52,6 +52,10 @@
     {
       "module_name": "@minecraft/server-ui",
       "version": "2.1.0-beta"
+    },
+    {
+      "module_name": "@minecraft/debug-utilities",
+      "version": "1.0.0-beta"
     }
   ]
 }

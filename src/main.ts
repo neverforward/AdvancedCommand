@@ -15,6 +15,8 @@ import { selected_slot, selected_slotfunc } from "cmd/selected_slot"
 import { name_tag, name_tagfunc } from "cmd/name_tag"
 import { cl, clfunc } from "cmd/cl"
 import { invis,invisfunc } from "cmd/invisible"
+import { rtstat,rtstatfunc } from 'cmd/rtstat'
+import { addonstat,addonstatfunc } from 'cmd/addonstat'
 
 sys.beforeEvents.startup.subscribe((e) => {
   let cmdreg = e.customCommandRegistry;
@@ -35,4 +37,6 @@ sys.beforeEvents.startup.subscribe((e) => {
   cmdreg.registerCommand(name_tag, name_tagfunc)
   cmdreg.registerCommand(cl, clfunc);
   cmdreg.registerCommand(invis, invisfunc);
+  cmdreg.registerCommand(rtstat, rtstatfunc);
+  cmdreg.registerCommand(addonstat, addonstatfunc);
 })

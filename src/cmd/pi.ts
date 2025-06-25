@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let pi: cmdtype = {
   name: "ac:pi",
   description: "获取玩家信息",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.pi ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: 'player',

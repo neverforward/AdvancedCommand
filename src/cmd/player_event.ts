@@ -8,13 +8,14 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let actiontype = ['climbing', 'emoting', 'falling', 'flying', 'gliding', 'in_water', 'jumping', 'on_ground', 'sleeping', 'sneaking', 'sprinting', 'swimming'];
 
 export let player_event: cmdtype = {
   name: 'ac:player_event',
   description: '判断玩家的活动',
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.player_event ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: 'player',

@@ -8,11 +8,12 @@ import {
     argtype,
     sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let health: cmdtype = {
     name: "ac:health",
     description: "查询或设置玩家的生命值",
-    permissionLevel: perlvl.GameDirectors,
+    permissionLevel: permissions.health ?? perlvl.GameDirectors,
     mandatoryParameters: [
         {
             name: 'player',

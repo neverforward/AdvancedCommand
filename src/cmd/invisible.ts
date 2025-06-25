@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let invis: cmdtype = {
   name: 'ac:invis',
   description: '隐身',
-  permissionLevel: perlvl.Admin,
+  permissionLevel: permissions.invis ?? perlvl.Admin,
   mandatoryParameters: [
     {
       name: 'enable',

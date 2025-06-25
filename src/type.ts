@@ -19,4 +19,22 @@ sys.run(() => {
   overworld = w.getDimension('overworld');
   nether = w.getDimension('nether');
   end = w.getDimension('the_end');
-})
+}) 
+
+export type cmdPermissions = {
+  "addonstat"?:mc.CommandPermissionLevel,
+  "cl"?:mc.CommandPermissionLevel,
+  "err"?:mc.CommandPermissionLevel,
+  "give"?:mc.CommandPermissionLevel,
+  "gm"?:mc.CommandPermissionLevel,
+  "health"?:mc.CommandPermissionLevel,
+  "invis"?:mc.CommandPermissionLevel,
+  "log"?:mc.CommandPermissionLevel,
+  "name_tag"?:mc.CommandPermissionLevel,
+  "pi"?:mc.CommandPermissionLevel,
+  "player_event"?:mc.CommandPermissionLevel,
+  "rtstat"?:mc.CommandPermissionLevel,
+  "sdo"?:mc.CommandPermissionLevel,
+  "selected_slot"?:mc.CommandPermissionLevel,
+  "warn"?:mc.CommandPermissionLevel,
+}

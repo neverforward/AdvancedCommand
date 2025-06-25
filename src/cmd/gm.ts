@@ -8,13 +8,14 @@ import {
     argtype,
     sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let gmtype = ['a', 'c', 's', 'p'];
 
 export let gm: cmdtype = {
     name: "ac:gm",
     description: "设置玩家的游戏模式",
-    permissionLevel: perlvl.GameDirectors,
+    permissionLevel: permissions.gm ?? perlvl.GameDirectors,
     mandatoryParameters: [
         {
             name: 'ac:gm',

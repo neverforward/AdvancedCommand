@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let name_tag: cmdtype = {
   name: 'ac:name_tag',
   description: '设置或获取玩家的名称',
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.name_tag ?? perlvl.GameDirectors,
   optionalParameters: [
     {
       name: 'nametag',

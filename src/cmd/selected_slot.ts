@@ -8,11 +8,12 @@ import {
     argtype,
     sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let selected_slot: cmdtype = {
     name: 'ac:selected_slot',
     description: '设置或获取玩家的选中物品栏槽位',
-    permissionLevel: perlvl.GameDirectors,
+    permissionLevel: permissions.selected_slot?? perlvl.GameDirectors,
     optionalParameters: [
         {
             name: 'slot',

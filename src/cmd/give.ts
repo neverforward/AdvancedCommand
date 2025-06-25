@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let give: cmdtype = {
   name: "ac:give",
   description: "用SAPI获取物品",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.give ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: "player",

@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let sdo: cmdtype = {
   name: "ac:sdo",
   description: "以SAPI的权限执行命令",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.sdo ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: "command",

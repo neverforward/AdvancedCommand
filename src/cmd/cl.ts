@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let cl: cmdtype = {
   name: 'ac:cl',
   description: '清除物品栏',
-  permissionLevel: perlvl.Admin,
+  permissionLevel: permissions.cl ?? perlvl.Admin,
   optionalParameters: [
     {
       name: 'player',

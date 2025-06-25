@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let log: cmdtype = {
   name: "ac:log",
   description: "在控制台中打印日志",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.log ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: "message",

@@ -8,11 +8,12 @@ import {
   argtype,
   sys
 } from 'type'
+import { permissions } from 'permissions';
 
 export let err: cmdtype = {
   name: "ac:err",
   description: "在控制台中打印错误",
-  permissionLevel: perlvl.GameDirectors,
+  permissionLevel: permissions.err ?? perlvl.GameDirectors,
   mandatoryParameters: [
     {
       name: "message",
