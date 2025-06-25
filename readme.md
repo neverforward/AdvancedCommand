@@ -18,6 +18,8 @@
 + `log <message:string>` 向控制台输出信息。
 + `warn <message:string>` 向控制台输出警告信息。
 + `err <message:string>` 向控制台输出错误信息。
++ `addonstat` 显示行为包信息。
++ `rtstat` 显示运行时信息。
 
 ## TODO✔️
 
