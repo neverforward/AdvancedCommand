@@ -1,5 +1,8 @@
 // ©2025 neverforward. All rights reserved.
 
+import * as mcui from '@minecraft/server-ui'
+import * as mc from '@minecraft/server'
+
 import {sys} from 'type'
 
 import { sdo, sdofunc } from 'cmd/sdo'
