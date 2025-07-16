@@ -25,12 +25,11 @@ export let sdo: cmdtype = {
 
 export function sdofunc(o: cmdorigin, cmd: string) {
   sys.run(() => {
-    let tmpP=mc.world.getAllPlayers()[0];           // 占位玩家，并无作用
     if (o.sourceType == srctype.Entity) {
       let e = o.sourceEntity;
       try {
-        if(e instanceof mc.Player) e.runCommand(fmt_str(cmd,'p',e,e).str);
-        else e.runCommand(fmt_str(cmd,'e',tmpP,e).str);
+        if(e instanceof mc.Player) e.runCommand(fmt_str(cmd,{p:e}).str);
+        else e.runCommand(fmt_str(cmd,{e:e}).str);
       }
       catch (err) {
         if (err instanceof Error) console.log(`\n§l§c[sdo] 命令执行失败: ${err.message}§r\n--------------\n生物：${e.nameTag == "" ? e.typeId : e.nameTag}\n命令：${cmd}\n位置：§cx: ${e.location.x} §ay: ${e.location.y} §9z: ${e.location.z}\n§r--------------`)
@@ -40,7 +39,7 @@ export function sdofunc(o: cmdorigin, cmd: string) {
     else if (o.sourceType == srctype.Block) {
       let e = o.sourceBlock;
       try {
-        e.dimension.runCommand(fmt_str(cmd,'n',tmpP,tmpP).str);
+        e.dimension.runCommand(fmt_str(cmd,{b:e}).str);
       }
       catch (err) {
         if (err instanceof Error) console.log(`\n§l§c[sdo] 命令执行失败: ${err.message}§r\n--------------\n方块：${e.typeId}\n命令：${cmd}\n位置：§cx: ${e.x} §ay: ${e.y} §9z: ${e.z}\n§r--------------`)
@@ -51,7 +50,8 @@ export function sdofunc(o: cmdorigin, cmd: string) {
       let e = o.sourceEntity;
       let p = o.initiator;
       try {
-        e.runCommand(fmt_str(cmd,'e',tmpP,e).str);
+        if(p instanceof mc.Player) e.runCommand(fmt_str(cmd,{p:p,e:e}).str);
+        else e.runCommand(fmt_str(cmd,{e:e}).str);
       }
       catch (err) {
         if (err instanceof Error) console.log(`\n§l§c[sdo] 命令执行失败: ${err.message}§r\n--------------\n执行NPC：${e.typeId}\n启动对话的玩家：${p.nameTag}\n命令：${cmd}\nNPC位置：§cx: ${e.location.x} §ay: ${e.location.y} §9z: ${e.location.z}\n§r玩家位置：§cx: ${p.location.x} §ay: ${p.location.y} §9z: ${p.location.z}\n§r--------------`)
