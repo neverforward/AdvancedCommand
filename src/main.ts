@@ -44,12 +44,12 @@ sys.beforeEvents.startup.subscribe((e) => {
   cmdreg.registerCommand(rtstat, rtstatfunc);
   cmdreg.registerCommand(addonstat, addonstatfunc);
 
-  // cmdreg.registerCommand({ name: 'ac:raw_test', description: '', permissionLevel: 0, optionalParameters: [{ name: 'text', type: mc.CustomCommandParamType.String }] }, (o: mc.CustomCommandOrigin, str: string) => {
-  //   if (o.sourceEntity instanceof mc.Player)
-  //     mc.world.sendMessage(fmt_str(str, {p:o.sourceEntity}).raw);
+  cmdreg.registerCommand({ name: 'ac:raw_test', description: '', permissionLevel: 0, optionalParameters: [{ name: 'text', type: mc.CustomCommandParamType.String }] }, (o: mc.CustomCommandOrigin, str: string) => {
+    if (o.sourceEntity instanceof mc.Player)
+      mc.world.sendMessage(fmt_str(str, {p:o.sourceEntity}).str);
 
-  //   return {
-  //     status: 1
-  //   }
-  // })
+    return {
+      status: 1
+    }
+  })
 })

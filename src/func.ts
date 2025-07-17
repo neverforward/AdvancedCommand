@@ -815,6 +815,7 @@ export function fmt_str(str: string, data: {
 }): { str: string, raw: mc.RawMessage } {
   const kw = match(str);
   const raw: mc.RawMessage[] = [];
+  let fstr='';
   let p = data.p ?? null;
   let e = data.e ?? null;
   let b = data.b ?? null;
@@ -824,49 +825,51 @@ export function fmt_str(str: string, data: {
     if (typeof it === 'string') {
       // 处理普通文本
       raw.push({ text: it });
-      str += it;
+      fstr += it;
       continue;
     }
-    // 处理功能标记
-    let fmt_r_p: fmt_type;
-    let fmt_r_e: fmt_type;
-    let fmt_r_b: fmt_type;
-    let fmt_r_dbg: fmt_type;
+    else {
+      // 处理功能标记
+      let fmt_r_p: fmt_type;
+      let fmt_r_e: fmt_type;
+      let fmt_r_b: fmt_type;
+      let fmt_r_dbg: fmt_type;
 
-    if (p) fmt_r_p = fmt_p(p, it.name, it.args);
-    if (e) fmt_r_e = fmt_e(e, it.name, it.args);
-    if (b) fmt_r_b = fmt_b(b, it.name, it.args);
-    if (dbg) fmt_r_dbg = fmt_dbg(it.name, it.args);
+      if (p) fmt_r_p = fmt_p(p, it.name, it.args);
+      if (e) fmt_r_e = fmt_e(e, it.name, it.args);
+      if (b) fmt_r_b = fmt_b(b, it.name, it.args);
+      if (dbg) fmt_r_dbg = fmt_dbg(it.name, it.args);
 
-    if (fmt_r_p && fmt_r_p.stat) {
-      raw.push(...fmt_r_p.raw);
-      str += fmt_r_p.str;
-    }
-    if (fmt_r_e && fmt_r_e.stat) {
-      raw.push(...fmt_r_e.raw);
-      str += fmt_r_e.str;
-    }
-    if (fmt_r_b && fmt_r_b.stat) {
-      raw.push(...fmt_r_b.raw);
-      str += fmt_r_b.str;
-    }
-    if (fmt_r_dbg && fmt_r_dbg.stat) {
-      raw.push(...fmt_r_dbg.raw);
-      str += fmt_r_dbg.str;
-    }
+      if (fmt_r_p && fmt_r_p.stat) {
+        raw.push(...fmt_r_p.raw);
+        fstr += fmt_r_p.str;
+      }
+      if (fmt_r_e && fmt_r_e.stat) {
+        raw.push(...fmt_r_e.raw);
+        fstr += fmt_r_e.str;
+      }
+      if (fmt_r_b && fmt_r_b.stat) {
+        raw.push(...fmt_r_b.raw);
+        fstr += fmt_r_b.str;
+      }
+      if (fmt_r_dbg && fmt_r_dbg.stat) {
+        raw.push(...fmt_r_dbg.raw);
+        fstr += fmt_r_dbg.str;
+      }
 
-    if (!(((fmt_r_p?.stat ?? true) &&
-      (fmt_r_e?.stat ?? true) &&
-      (fmt_r_b?.stat ?? true)) ||
-      (fmt_r_dbg?.stat ?? true))
-    ) {
-      raw.push({ text: '[未知标记]' });
-      str += '[未知标记]';
+      if (!(((fmt_r_p?.stat ?? true) &&
+        (fmt_r_e?.stat ?? true) &&
+        (fmt_r_b?.stat ?? true)) ||
+        (fmt_r_dbg?.stat ?? true))
+      ) {
+        raw.push({ text: '[未知标记]' });
+        fstr += '[未知标记]';
+      }
     }
   }
 
   return {
-    str: str,
+    str: fstr,
     raw: { rawtext: raw }
   };
 }

@@ -4,7 +4,7 @@
     "product_type": "addon"
   },
   "header": {
-    "name": "[1.21.93] 高级命令 (AdvancedCommand)",
+    "name": "[1.21.94] 高级命令 (AdvancedCommand)",
     "description": "高级命令",
     "min_engine_version": [
       1,
@@ -15,7 +15,7 @@
     "version": [
       1,
       1,
-      0
+      1
     ]
   },
   "modules": [
